@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Extracting a Model - Read Until Scripts</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Extracting a Model";
+    var mkdocs_page_input_path = "model.md";
+    var mkdocs_page_url = "/model/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Read Until Scripts</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../about/">About Read Until</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../install/">Installation</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../filesandfolders/">Included Files</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../testing/">Testing the API</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Extracting a Model</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#getmodelspy">getmodels.py</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../offline/">Offline Read Until</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../online/">Online Read Until</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../scripthelp/">Script Help</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Read Until Scripts</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Extracting a Model</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="getmodelspy">getmodels.py</h1>
+<p>In order to squiggle match between an incoming read and a reference sequence it is necessary to generate a reference in squiggle space. To do this you require a model file to enable the conversion of kmers in base space to a current value. Currently the appropriate model files are embedded within reads as they are returned by the basecaller.</p>
+<p>It is important to have a model file for the chemistry and pore type that you are using.</p>
+<p>For read until you only require a template model file. If you wish to run ampbalance (which identifies potential 2D reads from a dataset you also require the complement model file).</p>
+<p>It is not necessary to generate a model file each time you carry out a new read until experiment. Instead, new files should be obtained whenever a chemistry or pore change occurs. We suggest that it is good practice to extract a model file from the most recent read data available to you when preparing for a read until run as these models have been silently updated in the past.</p>
+<p>Ideally the read from which to extract a model should come from the pass folder of a base called run. To extract both template and complement models, this read must be from a 2D base called run. getmodels.py will output whichever models it finds within the file.</p>
+<p>Below is an image describing the function of getmodel.py :</p>
+<p><img alt="An image showing how Model Files are generated by getmodel.py" src="../images/modelfiles.jpg" /></p>
+<p>First navigate to the RUscripts folder in a windows command terminal:</p>
+<pre><code>&gt; cd \path\to\Ruscripts
+</code></pre>
+<p>To print the getmodels.py help statement at the prompt type:</p>
+<pre><code>&gt; python getmodels.py -h
+</code></pre>
+<p>which will output:</p>
+<pre><code>usage: getmodels.py [-h] [-r READ] [-v] [-ver]
+
+getmodels: A program to extract model files from Nanopore reads. Ideally you
+should provide a read that has given a 2D read - i.e comes from the pass
+folder on a 2D basecalling run. For Read Until purposes, extraction of just a
+template model is sufficient. Model files will be appended with a number to
+identify the kmer length of the model.
+
+optional arguments:
+-h, --help            show this help message and exit
+-r READ, --read READ  Provide a read file to extract the current model from.
+-v, --verbose-true    Print detailed messages while processing files to aid
+                    in debugging.
+-ver, --version       Print version information and exit.
+</code></pre>
+<p>To run getmodels.py at the prompt ($) type:</p>
+<pre><code>$python getmodels.py -r /path/to/your/read.fast5
+</code></pre>
+<p>We provide a suitable read in the folder exampleread</p>
+<p>So:</p>
+<pre><code>&gt; python getmodels.py -r exampleread/llssbzms2p35x_lambda11ladderup_1208_1_ch11_file27_strand.fast5
+</code></pre>
+<p>will output:</p>
+<pre><code>Processing exampleread/llssbzms2p35x_lambda11ladderup_1208_1_ch11_file27_strand.fast5
+Looking for template model.
+***: Model Found
+template model file write completed.
+Kmer length is: 6
+File format is:
+Kmer    Mean    Standard Dev
+Looking for complement model.
+***: Model Found
+complement model file write completed.
+Kmer length is: 6
+File format is:
+Kmer    Mean    Standard Dev
+</code></pre>
+<p>This will have generated two files - one for the template and one for the complement model.</p>
+<p>They will be named:</p>
+<p>[readtype]<em>[model_name]</em>[kmerlength].model</p>
+<p>Where [readtype] is either template or complement, [model_name] is the pore/chemistry type (in this case r7.3_e6_70bps_6mer) and [kmerlen] is the locally calculated length of the kmers used in the model.</p>
+<p>These model files are used by all other scripts here. Note that the model files will be overwritten by getmodels.py if it is run again on another read with the same pore/chemistry type and kmer length. This is not a problem.</p>
+<p>*** We recommend that you update the model regularly.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../offline/" class="btn btn-neutral float-right" title="Offline Read Until">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../testing/" class="btn btn-neutral" title="Testing the API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../testing/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../offline/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

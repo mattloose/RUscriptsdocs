@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Testing the API - Read Until Scripts</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Testing the API";
+    var mkdocs_page_input_path = "testing.md";
+    var mkdocs_page_url = "/testing/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Read Until Scripts</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../about/">About Read Until</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../install/">Installation</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../filesandfolders/">Included Files</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Testing the API</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#running-ws_event_sampler">Running ws_event_sampler</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../model/">Extracting a Model</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../offline/">Offline Read Until</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../online/">Online Read Until</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../scripthelp/">Script Help</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Read Until Scripts</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Testing the API</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="running-ws_event_sampler">Running ws_event_sampler</h1>
+<p>Read until works by streaming data from minKNOW during a run to an external analysis pipeline and receiving instructions to reject reads as required. The program streaming the data is called ws_event_sampler.exe and this is found in the folder</p>
+<pre><code>C:\grouper\binaries\bin
+</code></pre>
+<p>which is available after installing minKNOW.</p>
+<p>First navigate to this folder:</p>
+<pre><code>&gt; cd \grouper\binaries
+</code></pre>
+<p>ws_event_sampler can run either stand alone in simulation mode, or alongside minKNOW as it is running. For simulations, we suggest you start minKNOW and have it open (but not actually sequencing). Then start ws_event_sampler in simulation mode. In this way you will see the output from our scripts in the minKNOW messages window.</p>
+<p>Running ws_event_sampler is done as follows:</p>
+<pre><code>&gt; bin\ws_event_sampler.exe
+</code></pre>
+<p>*** NOTE: The command itself is bin\ws_event_sampler.exe so the command is executed from the folder binaries, not from within the folder bin. Executing the file from within the bin folder will result in the program crashing with a message about being unable to open a config file.</p>
+<p>*** NOTE: ws_event_sampler provides no visible indication that it is running other than blocking the command line. If it fails, it will terminate - sometimes with an error message, but often not. Support for ws_event_sampler is available direct from ONT. We hope we have provided sufficient guidance for its use in the context of our scripts here.</p>
+<p>ws_event_sampler can be run in simulation mode to facilitate the development of analysis scripts. When running in simulation mode, ws_event_sampler provides reads driven from a model file stored locally. This same model file must be used to analyse data when in simulation mode. When streaming live data direct from minKnow it is essential to use the correct model for the chemistry and pore type in use.</p>
+<p>The read until API provides comprehensive instructions on how to run ws_event_sampler. Below we provide worked examples for our scripts.</p>
+<p>To test that ws_event_sampler is functioning correctly, do the following:</p>
+<p>1) Open a command window as administrator - to do this, right click on the cmd icon and select "Run as Administrator"</p>
+<p>2) In this window navigate to C:\grouper\binaries</p>
+<p>3) To see help for ws_event_sampler type:</p>
+<pre><code>&gt; bin\ws_event_sampler.exe -h
+</code></pre>
+<p>which will output:</p>
+<pre><code>Usage: ws_event_sampler [Options]
+
+Common options:
+  -h [ --help ]                         Produce help message
+  -c [ --config ] arg (=./conf/global.conf)
+                                        Application config file.
+
+Specific options:
+  -p [ --port ] arg                     Port to listen for requests. If this is
+                                        not specified it is taken from the
+                                        ws_event_sampler_port field in the
+                                        config file.
+  -s [ --sim ]                          Start in standalone simulation mode.
+  --sim-channels arg                    Number of channels simulation uses.
+                                        E.g. use a low number when debugging to
+                                        make the pushed data manageable. This
+                                        overrides the channel_count setting in
+                                        the conf file but only during
+                                        simulation.
+  --sim-model arg                       Path to model file to be used by
+                                        simulation when generating events.
+  --sim-fasta arg                       Path to fasta file from which to draw
+                                        fragments to be used by simulation.
+  --sim-delay arg (=0)                  Seconds delay before starting
+                                        simulation. By default the simulation
+                                        starts as soon as this server starts
+                                        up.
+  --sim-fragment-length arg             Random lengths are bounded, approximate
+                                        normal distributions, picked by rolling
+                                        lots of dice. You need to specify die
+                                        sides, die count and a base amount. For
+                                        example, the default setting of '5 250
+                                        500' will generate reads with mean
+                                        length 1000 and bounds [500,1500].
+  --sim-log arg                         Filename to use for csv-format log of
+                                        the simulation. Will overwrite if
+                                        already exists.
+</code></pre>
+<p>To set up a simulation on a specific port type:</p>
+<pre><code>&gt; bin\ws_event_sampler.exe -p 9200 -s --sim-channels 100 --sim-fasta C:\path\to\RUscripts\J02459.fasta --sim-log log.txt
+</code></pre>
+<p>This will establish the data stream on port 9200, simulating 100 channels with a read distribution as described derived from the lambda sequence we have provided here. ws_event_sampler in simulation mode will write out a log file to log.txt enabling tracking of events.</p>
+<p>In the example.py script, edit the line which states:</p>
+<pre><code>host="ws://localhost:&lt;port&gt;"
+</code></pre>
+<p>to</p>
+<pre><code>host="ws://localhost:9200"
+</code></pre>
+<p>Note - you can specify a different port value if you wish.</p>
+<p>Then from another command window execute the examply.py script (note this is supplied by the ONT API).</p>
+<p>First navigate to the correct folder:</p>
+<pre><code>&gt; cd \path\to\RUscripts\ReadUntil
+</code></pre>
+<p>Then run the example script:</p>
+<pre><code>&gt; python example.py
+</code></pre>
+<p>This should output something like (depending on the version of the API in use):</p>
+<pre><code>Client connection started. Beginning unblock loop...
+channel_name= 344  read_number= 12  events_in_sample= 200  first event: start= 1104931.0  mean= 71.1864189873
+channel_name= 345  read_number= 12  events_in_sample= 200  first event: start= 1111035.0  mean= 68.1394555562
+channel_name= 346  read_number= 12  events_in_sample= 200  first event: start= 1104312.0  mean= 67.1975140682
+channel_name= 347  read_number= 15  events_in_sample= 200  first event: start= 1203518.0  mean= 72.436242832
+channel_name= 340  read_number= 12  events_in_sample= 200  first event: start= 1104326.0  mean= 60.9232571465
+channel_name= 341  read_number= 12  events_in_sample= 200  first event: start= 1102520.0  mean= 69.496870232
+channel_name= 342  read_number= 12  events_in_sample= 200  first event: start= 1097286.0  mean= 65.2731245584
+channel_name= 343  read_number= 12  events_in_sample= 200  first event: start= 1102224.0  mean= 65.2680067692
+channel_name= 348  read_number= 12  events_in_sample= 200  first event: start= 1119138.0  mean= 77.3645669056
+channel_name= 349  read_number= 12  events_in_sample= 200  first event: start= 1092464.0  mean= 72.4693304753
+channel_name= 298  read_number= 12  events_in_sample= 200  first event: start= 1109404.0  mean= 66.3816659282
+channel_name= 299  read_number= 12  events_in_sample= 200  first event: start= 1103390.0  mean= 66.1452746381
+</code></pre>
+<p>If you see:</p>
+<pre><code>Client connection started. Beginning unblock loop...
+Unhandled exception in thread started by &lt;bound method ReadUntil.data_received_own_thread of &lt;read_until.ReadUntil object at 0x00000000023AA
+FD0&gt;&gt;
+Traceback (most recent call last):
+File "C:\...\ReadUntil\read_until.py", line 110, in data_received_own_thread
+self.data_received(channels_update)
+File "example.py", line 46, in data_received
+for channel_id, data in channels.iteritems():
+AttributeError: 'NoneType' object has no attribute 'iteritems'
+Unhandled exception in thread started by &lt;bound method ReadUntil.data_received_own_thread of &lt;read_until.ReadUntil object at 0x00000000023AA
+FD0&gt;&gt;
+Traceback (most recent call last):
+File "C:\...\ReadUntil\read_until.py", line 110, in data_received_own_thread
+self.data_received(channels_update)
+File "example.py", line 46, in data_received
+for channel_id, data in channels.iteritems():
+AttributeError: 'NoneType' object has no attribute 'iteritems'
+Unhandled exception in thread started by &lt;bound method ReadUntil.data_received_own_thread of &lt;read_until.ReadUntil object at 0x00000000023AA
+FD0&gt;&gt;
+</code></pre>
+<p>Then you have likely got a clash between the API version we have specified and the version of minKNOW installed.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../model/" class="btn btn-neutral float-right" title="Extracting a Model">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../filesandfolders/" class="btn btn-neutral" title="Included Files"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../filesandfolders/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../model/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

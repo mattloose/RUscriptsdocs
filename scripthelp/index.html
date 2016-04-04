@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Script Help - Read Until Scripts</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Script Help";
+    var mkdocs_page_input_path = "scripthelp.md";
+    var mkdocs_page_url = "/scripthelp/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Read Until Scripts</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../about/">About Read Until</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../install/">Installation</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../filesandfolders/">Included Files</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../testing/">Testing the API</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../model/">Extracting a Model</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../offline/">Offline Read Until</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../online/">Online Read Until</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Script Help</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#getting-script-help">Getting Script Help</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#common-failures">Common Failures</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#less-common-failures">Less Common Failures</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Read Until Scripts</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Script Help</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="getting-script-help">Getting Script Help</h1>
+<p>All scripts here adhere to the following standard arguments:</p>
+<ul>
+<li>-h Will print a help statement and exit.</li>
+<li>-ver Will print version information and exit.</li>
+<li>-v Will print additional debug information and more verbose output to screen while the code is executing.</li>
+</ul>
+<p>Additional options are described for each script in the documentation.</p>
+<h1 id="common-failures">Common Failures</h1>
+<p>1) ws_event_sampler crashes: If ws_event_sampler crashes, the read until scripts will no longer 'see' the events and thus the sequencer will sequence all reads regardless of where they map too. The scripts alert you to a dropped connection with the message "Hanging around waiting for server". You should check for this periodically. We hope that ws_event_sampler will become more stable over time. ws_event_sampler can be restarted at any point to restart capturing data.</p>
+<p>2) Processor timeouts: If the load on the CPU is too high, reads will 'timeout'. This will result in a loss of selective sequencing.</p>
+<p>3) Missing amplicons: If an amplicon is entirely missing from a sample, read until will never complete. It is wise to carefully observe a run and check this hasn't occurred.</p>
+<h1 id="less-common-failures">Less Common Failures</h1>
+<p>Rarely a read until script will crash. This will have different failure modes depending on the script.</p>
+<p>gReadUntil crashes will allow all reads to be sequenced for the period of time the script is not running. Restarting the script will re enable selective sequencing.</p>
+<p>Rarely aReadUntil.py will crash. At this time, aReadUntil does not recover from a crash such that a read until run can be continued. Essentially if the script crashes it loses track of where it was at. We hope to add this functionality in the near future. User beware. </p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../online/" class="btn btn-neutral" title="Online Read Until"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../online/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+
+</body>
+</html>
