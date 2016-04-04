@@ -1,0 +1,47 @@
+# Read Until
+
+This documentation accompanies the preprint currently available [BioRxiv](http://biorxiv.org/content/early/2016/02/03/038760 "Read Until Manuscript").
+
+The associated GitHub repository is [here](https://github.com/mattloose/RUscripts "Read Until GitHub").
+
+Read Until is a technology enabled by the [Oxford Nanopore Technologies](http://nanoporetech.com "Oxford Nanopore Technologies Homepage") MinION and in the future PromethION sequencers. The scripts described here provide one method of implementation of read until. The scripts are supplied as is and are used at your own risk.
+
+#*Risks!!*
+
+Running read until will influence the behaviour of your flow cell and change the output of your sequencing experiment. You are strongly advised to run simulations of read until prior to running on a live flow cell. The code as presented here is a demonstration of read until and one method by which it can be implemented. Users run this code entirely at their own risk.
+
+*Please note these scripts depend upon APIs which are not provided here. The Read Until API is available from Oxford Nanopore on request to MAP participants.*
+
+# minKNOW version compatability statement
+
+These scripts and files are compatible with versions of minKNOW predating the v 0.51.1.62 (released February 22nd 2016). Read Until in this latest version of minKNOW is currently unstable. ONT are fixing this at this time. We provide scripts that compensate for these errors in a simulation, but these will not work for a live read until run at this time.
+
+Our code will work with all versions of the Read Until API released prior to 4/4/2016. However, currently supported versions of minKNOW are v 0.48.1.3 to 0.51.1.51. Later versions of minKNOW currently do not interpret reject statements correctly. This is actively under investigation by ONT and updates will be posted here when this is resolved.
+
+We highlight where the version of minKNOW used might impact results in the documentation.
+
+*You must have minKNOW installed on the windows machine you are running this code on. One python distribution is called Anaconda. ONT install Anaconda alongside minKNOW and this python version comes with some of the required packages for our scripts. Our scripts will also run on Linux or OSX but at this time we provide no explicit documentation to support this, however users confident with python and Unix should have no problems.*
+
+#Getting help with read until.
+
+We are happy to help where we can. Please feel free to contact via twitter [@mattloose](https://twitter.com/mattloose) or email <matt.loose@nottingham.ac.uk>. We will try to update this read me file whenever significant changes are made to the API or minKNOW versions that might affect read until. For issues with the API itself or the ws_event_sampler program, users will most likely be redirected to ONT.
+
+
+
+
+<!---For full documentation visit [mkdocs.org](http://mkdocs.org).
+
+## Commands
+
+* `mkdocs new [dir-name]` - Create a new project.
+* `mkdocs serve` - Start the live-reloading docs server.
+* `mkdocs build` - Build the documentation site.
+* `mkdocs help` - Print this help message.
+
+## Project layout
+
+    mkdocs.yml    # The configuration file.
+    docs/
+        index.md  # The documentation homepage.
+        ...       # Other markdown pages, images and other files.
+-->

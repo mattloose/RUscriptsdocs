@@ -1,0 +1,16 @@
+site_name: Read Until Scripts
+formats:
+        - epub
+        - pdf
+
+pages:
+    - Home: index.md
+    - About Read Until: about.md
+    - Installation: install.md
+    - Included Files: filesandfolders.md
+    - Testing the API: testing.md
+    - Extracting a Model: model.md
+    - Offline Read Until: offline.md
+    - Online Read Until: online.md
+    - Script Help: scripthelp.md
+theme: readthedocs
