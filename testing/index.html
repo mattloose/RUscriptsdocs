@@ -221,6 +221,9 @@ Specific options:
 <pre><code>&gt; bin\ws_event_sampler.exe -p 9200 -s --sim-channels 100 --sim-fasta C:\path\to\RUscripts\J02459.fasta --sim-log log.txt
 </code></pre>
 <p>This will establish the data stream on port 9200, simulating 100 channels with a read distribution as described derived from the lambda sequence we have provided here. ws_event_sampler in simulation mode will write out a log file to log.txt enabling tracking of events.</p>
+<p>First navigate to the correct folder:</p>
+<pre><code>&gt; cd \path\to\RUscripts\ReadUntil
+</code></pre>
 <p>In the example.py script, edit the line which states:</p>
 <pre><code>host="ws://localhost:&lt;port&gt;"
 </code></pre>
@@ -229,9 +232,6 @@ Specific options:
 </code></pre>
 <p>Note - you can specify a different port value if you wish.</p>
 <p>Then from another command window execute the examply.py script (note this is supplied by the ONT API).</p>
-<p>First navigate to the correct folder:</p>
-<pre><code>&gt; cd \path\to\RUscripts\ReadUntil
-</code></pre>
 <p>Then run the example script:</p>
 <pre><code>&gt; python example.py
 </code></pre>
