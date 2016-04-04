@@ -203,7 +203,7 @@ which will output:
 
 An example run command using test data:
 
-    > python ampliconSPLIT.py -fasta J02459.fasta -ids lambda_amplicons.txt -w RUtestset/ -o test -d 10 -procs 8 -t template_r7.3_e6_70bps_6mer_6.model
+    > python ampliconSPLIT.py -fasta J02459.fasta -ids lambda_amplicons.txt -w RUtestset/ -o RUtestsetOUT -d 10 -procs 8 -t template_r7.3_e6_70bps_6mer_6.model
 
 Which will output:
 
