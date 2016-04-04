@@ -15,7 +15,7 @@ Here the script is implemented on reads that have been basecalled to facilitate 
 
 First navigate to the RUscripts folder in a windows command terminal:
 
-    > cd \path\to\Ruscripts
+    > cd \path\to\RUscripts
 
 To print the ampbalance.py help statement at the prompt ($) type:
 
@@ -150,7 +150,7 @@ This script will process reads into subfolders in the targetpath corresponding t
 
 First navigate to the RUscripts folder in a windows command terminal:
 
-    > cd \path\to\Ruscripts
+    > cd \path\to\RUscripts
 
 To print the ampliconSPLIT.py help statement at the prompt ($) type:
 
@@ -309,7 +309,7 @@ which will output:
 
 A typical command line to select reads mapping from 10-15kb in the lambda genome would be:
 
-    > python test_gReadUntil.py -fasta ../J02459.fasta -targets J02459:10000-15000 -procs 4  -m ../template_r7.3_e6_70bps_6mer_6.model -w ../RUtestset/ -o test
+    > python test_gReadUntil.py -fasta ../J02459.fasta -targets J02459:10000-15000 -procs 4  -m ../template_r7.3_e6_70bps_6mer_6.model -w ../RUtestset/ -o RUgOUT
 
 This would give the following output:
 
@@ -339,4 +339,4 @@ This would give the following output:
 
 Sequence found indicates that the read is derived from the desired region. No Match indicates that the read is from another region.
 
-*** Add comment about expected output of test_gReadUntil
+This script will output reads to the output folder in two separate directories, named "reject" and "sequence". Files which would have been rejected will be placed in subfolders within the "reject" folder and those sequenced within the "sequence" folder.

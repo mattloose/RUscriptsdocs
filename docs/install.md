@@ -10,7 +10,7 @@ To use read until at this time you have to use the command line. To access the c
 
 Once at the command line, navigate to the folder containing this Readme file.
 
-    > cd \path\to\Ruscripts
+    > cd \path\to\RUscripts
 
 All scripts are python 2.7.
 
@@ -30,7 +30,7 @@ To exit this window type
 
     >>> exit()
 
-Please note these scripts depend upon APIs which are not provided here. The Read Until API is available from Oxford Nanopore on request to MAP participants and is described in detail below.
+Please note these scripts depend upon APIs which are not provided here. The Read Until API is available from Oxford Nanopore on request to MAP participants.
 
 #Installing components for Read Until Scripts
 

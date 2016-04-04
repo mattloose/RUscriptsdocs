@@ -16,7 +16,7 @@ Below is an image describing the function of getmodel.py :
 
 First navigate to the RUscripts folder in a windows command terminal:
 
-    > cd \path\to\Ruscripts
+    > cd \path\to\RUscripts
 
 To print the getmodels.py help statement at the prompt type:
 

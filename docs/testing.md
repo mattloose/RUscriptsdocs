@@ -80,6 +80,10 @@ To set up a simulation on a specific port type:
 
 This will establish the data stream on port 9200, simulating 100 channels with a read distribution as described derived from the lambda sequence we have provided here. ws_event_sampler in simulation mode will write out a log file to log.txt enabling tracking of events.
 
+First navigate to the correct folder:
+
+    > cd \path\to\RUscripts\ReadUntil
+
 In the example.py script, edit the line which states:
 
     host="ws://localhost:<port>"
@@ -91,10 +95,6 @@ to
 Note - you can specify a different port value if you wish.
 
 Then from another command window execute the examply.py script (note this is supplied by the ONT API).
-
-First navigate to the correct folder:
-
-    > cd \path\to\RUscripts\ReadUntil
 
 Then run the example script:
 
