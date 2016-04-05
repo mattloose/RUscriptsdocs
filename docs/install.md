@@ -84,12 +84,6 @@ We remind you again:
 
 *Important Note: Running read until will influence the behaviour of your flow cell and change the output of your sequencing experiment. You are strongly advised to run simulations of read until prior to running on a live flow cell. The code as presented here is a demonstration of read until and one method by which it can be implemented. Users run this code entirely at their own risk.*
 
-# API versions
-
-The read until API changes depending on the version of minKNOW in use. The read until API for minKNOW versions 0.48.1.3 - 0.51.1.51 is available on request from Oxford Nanopore.  
-
-Our code is compatible with all versions of the API. However, the latest version of minKNOW as of 4th April 2016 does not function as anticipated. It will work for simulation runs with ws_event_sampler, but minKNOW itself does not function correctly with the API. This is actively being resolved by ONT. Thus, testing and simulation is possible with our code and later versions of minKNOW and ws_event_sampler but these scripts WILL NOT WORK AT THIS TIME with minKNOW versions > 0.51.1.51
-
 # Installing the API
 
 Once you have obtained the API, copy the following files and folders (and contents) into the RUscripts\ReadUntil folder:
@@ -98,3 +92,10 @@ Once you have obtained the API, copy the following files and folders (and conten
 	event_sampler.thrift
     event_sampler/* (note - you need to copy the folder and its contents)
     example.py
+
+
+# API versions
+
+The read until API changes depending on the version of minKNOW in use. The read until API for minKNOW versions 0.48.1.3 - 0.51.1.51 is available on request from Oxford Nanopore.  
+
+Our code is compatible with all versions of the API. However, the latest version of minKNOW as of 4th April 2016 does not function as anticipated. It will work for simulation runs with ws_event_sampler, but minKNOW itself does not function correctly with the API. This is actively being resolved by ONT. Thus, testing and simulation is possible with our code and later versions of minKNOW and ws_event_sampler but these scripts WILL NOT WORK AT THIS TIME with minKNOW versions > 0.51.1.51
