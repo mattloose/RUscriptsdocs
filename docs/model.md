@@ -16,11 +16,11 @@ Below is an image describing the function of getmodel.py :
 
 First navigate to the RUscripts folder in a windows command terminal:
 
-    > cd \path\to\RUscripts
+    cd \path\to\RUscripts
 
 To print the getmodels.py help statement at the prompt type:
 
-    > python getmodels.py -h
+    python getmodels.py -h
 
 which will output:
 
@@ -47,7 +47,7 @@ We provide a suitable read in the folder exampleread
 
 So:
 
-    > python getmodels.py -r exampleread/llssbzms2p35x_lambda11ladderup_1208_1_ch11_file27_strand.fast5
+    python getmodels.py -r exampleread/llssbzms2p35x_lambda11ladderup_1208_1_ch11_file27_strand.fast5
 
 will output:
 

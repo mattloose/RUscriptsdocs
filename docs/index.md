@@ -4,13 +4,15 @@ This documentation accompanies the preprint currently available [BioRxiv](http:/
 
 The associated GitHub repository is [here](https://github.com/mattloose/RUscripts "Read Until GitHub").
 
-Read Until is a technology enabled by the [Oxford Nanopore Technologies](http://nanoporetech.com "Oxford Nanopore Technologies Homepage") MinION and in the future PromethION sequencers. The scripts described here provide one method of implementation of read until. The scripts are supplied as is and are used at your own risk.
+Read Until is a technology enabled by the [Oxford Nanopore Technologies](http://nanoporetech.com "Oxford Nanopore Technologies Homepage") MinION and expected to be available in the future PromethION sequencers. The scripts described here provide one method of implementation of read until. The scripts are supplied as is and are used at your own risk.
 
 #*WARNING:*
 
 The read until API changes depending on the version of minKNOW in use. The read until API for minKNOW versions 0.48.1.3 - 0.51.1.51 is available on request from Oxford Nanopore.  
 
-Our code is compatible with all versions of the API. However, versions of minKNOW since 0.51.1.51 and up to 4th April 2016 do not function as anticipated. The ws_event_sampler simulations will work, but minKNOW itself does not function correctly with the API. This is actively being resolved by ONT. Thus, testing and simulation is possible with our code and later versions of minKNOW and ws_event_sampler but these scripts WILL NOT ACTIVELY REJECT READS AT THIS TIME with minKNOW versions > 0.51.1.51.
+Our code is compatible with all versions of the API. However, versions of minKNOW since 0.51.1.51 and up to 4th April 2016 do not function as anticipated. The ws_event_sampler simulations will work, but minKNOW itself does not function correctly with the API. This is actively being resolved by ONT. Thus, testing and simulation is possible with our code and later versions of minKNOW and ws_event_sampler but these scripts WILL NOT ACTIVELY REJECT READS AT THIS TIME with minKNOW versions > 0.51.1.51. This is actively under investigation by ONT and updates will be posted here when this is resolved.
+
+*You must have minKNOW installed on the windows machine you are running this code on. ONT install Anaconda, a version of python, alongside minKNOW and this comes with some of the required packages for our scripts. Our scripts will also run on Linux or OSX but at this time we provide no explicit documentation to support this, however users confident with python and Unix should have no problems.*
 
 #*Risks!!*
 
@@ -18,15 +20,6 @@ Running read until will influence the behaviour of your flow cell and change the
 
 *Please note these scripts depend upon APIs which are not provided here. The Read Until API is available from Oxford Nanopore on request to MAP participants.*
 
-# minKNOW version compatability statement
-
-These scripts and files are compatible with versions of minKNOW predating the v 0.51.1.62 (released February 22nd 2016). Read Until in this latest version of minKNOW is currently unstable. ONT are fixing this at this time. We provide scripts that compensate for these errors in a simulation, but these will not work for a live read until run at this time.
-
-Our code will work with all versions of the Read Until API released prior to 4/4/2016. However, currently supported versions of minKNOW are v 0.48.1.3 to 0.51.1.51. Later versions of minKNOW currently do not interpret reject statements correctly. This is actively under investigation by ONT and updates will be posted here when this is resolved.
-
-We highlight where the version of minKNOW used might impact results in the documentation.
-
-*You must have minKNOW installed on the windows machine you are running this code on. One python distribution is called Anaconda. ONT install Anaconda alongside minKNOW and this python version comes with some of the required packages for our scripts. Our scripts will also run on Linux or OSX but at this time we provide no explicit documentation to support this, however users confident with python and Unix should have no problems.*
 
 #Getting help with read until.
 

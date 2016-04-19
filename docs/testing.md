@@ -8,13 +8,13 @@ which is available after installing minKNOW.
 
 First navigate to this folder:
 
-    > cd \grouper\binaries
+    cd \grouper\binaries
 
 ws_event_sampler can run either stand alone in simulation mode, or alongside minKNOW as it is running. For simulations, we suggest you start minKNOW and have it open (but not actually sequencing). Then start ws_event_sampler in simulation mode. In this way you will see the output from our scripts in the minKNOW messages window.
 
 Running ws_event_sampler is done as follows:
 
-    > bin\ws_event_sampler.exe
+    bin\ws_event_sampler.exe
 
 *** NOTE: The command itself is bin\ws_event_sampler.exe so the command is executed from the folder binaries, not from within the folder bin. Executing the file from within the bin folder will result in the program crashing with a message about being unable to open a config file.
 
@@ -32,7 +32,7 @@ To test that ws_event_sampler is functioning correctly, do the following:
 
 3) To see help for ws_event_sampler type:
 
-    > bin\ws_event_sampler.exe -h
+    bin\ws_event_sampler.exe -h
 
 which will output:
 
@@ -76,13 +76,13 @@ which will output:
 
 To set up a simulation on a specific port type:
 
-    > bin\ws_event_sampler.exe -p 9200 -s --sim-channels 100 --sim-fasta C:\path\to\RUscripts\J02459.fasta --sim-log log.txt
+    bin\ws_event_sampler.exe -p 9200 -s --sim-channels 100 --sim-fasta C:\path\to\RUscripts\J02459.fasta --sim-log log.txt
 
 This will establish the data stream on port 9200, simulating 100 channels with a read distribution as described derived from the lambda sequence we have provided here. ws_event_sampler in simulation mode will write out a log file to log.txt enabling tracking of events.
 
 First navigate to the correct folder:
 
-    > cd \path\to\RUscripts\ReadUntil
+    cd \path\to\RUscripts\ReadUntil
 
 In the example.py script, edit the line which states:
 
@@ -98,7 +98,7 @@ Then from another command window execute the examply.py script (note this is sup
 
 Then run the example script:
 
-    > python example.py
+    python example.py
 
 This should output something like (depending on the version of the API in use):
 

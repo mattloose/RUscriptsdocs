@@ -9,7 +9,7 @@ Our code is compatible with all versions of the API. However, versions of minKNO
 
 We provide two sets of scripts. The first set are "Offline" scripts. They do not require the Read Until API and so can be run on any platform.
 
-The second set (ONLINE scripts) absolutely require the API. For these *you must have minKNOW installed on the windows machine you are running this code on.*
+The second set (ONLINE scripts) absolutely require the API. For these *you must have minKNOW installed on the windows machine you are running this code on. Note you should restart your machine after installing an update to minKNOW or installing minKNOW for the first time.*
 
 We assume that you are running these scripts on a windows machine with minKNOW installed. ONT install a version of python called Anaconda alongside minKNOW and this python version comes with some of the required packages for our scripts. Our scripts will also run on Linux or OSX but at this time we provide no explicit documentation to support this, however users confident with python and Unix should have no problems.
 
@@ -17,13 +17,13 @@ To use read until at this time you have to use the command line. To access the c
 
 Once at the command line, navigate to the folder containing this Readme file.
 
-    > cd \path\to\RUscripts
+     cd \path\to\RUscripts
 
 All scripts are python 2.7.
 
 We assume that the default version of python in your path is the ONT Anaconda installation. To test this, type
 
-    > python
+     python
 
 And you should see:
 
@@ -59,7 +59,7 @@ To install these modules on the ONT Anaconda type:
 
 
 
-    > easy_install thrift ws4py h5py configargparse biopython watchdog psutil
+     easy_install thrift ws4py h5py configargparse biopython watchdog psutil
 
 NOTE: You may need to add C:\Anaconda\Scripts to your path to access easy_install and pip.
 
@@ -74,18 +74,18 @@ mlpy-3.5.0-cp27-none-win_amd64.whl
 
 To install this you need to first install pip.
 
-    > easy_install install pip
+     easy_install install pip
 
 Then to install your downloaded wheel:
 
-    > pip install \path\to\mlpy-3.5.0-cp27-non-win_amd64.whl
+     pip install \path\to\mlpy-3.5.0-cp27-non-win_amd64.whl
 
 Now you should have all the prerequisites required to run these scripts on windows using the native python.
 
 
 # Obtaining the Read Until API
 
-The read until API is available on request from Oxford Nanopore Technologies to individuals who are members of the MAP. Please see the ONT Store/WIKI or contact your ONT representative for further assistance.
+The read until API is available on request from Oxford Nanopore Technologies to individuals who are members of the MAP. Please see the [ONT Store/WIKI](http://wiki.nanoporetech.com) or contact your ONT representative for further assistance.
 
 We remind you again:
 

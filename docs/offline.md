@@ -15,11 +15,11 @@ Here the script is implemented on reads that have been basecalled to facilitate 
 
 First navigate to the RUscripts folder in a windows command terminal:
 
-    > cd \path\to\RUscripts
+    cd \path\to\RUscripts
 
 To print the ampbalance.py help statement at the prompt ($) type:
 
-    > python ampbalance.py -h
+    python ampbalance.py -h
 
 which will output:
 
@@ -81,7 +81,7 @@ This script is designed to match amplicon sequences of known and approximately u
 
 We provide an example set of reads using lambda, found in the ampbalancetest folder. A typical usage command would be:
 
-    > python ampbalance.py -fasta J02459.fasta -ids lambda_amplicons.txt -w ampbalancetest -o ampbalanceoutput -d 5 -procs 4 -t template_r7.3_e6_70bps_6mer_6.model -c complement_r7.3_e6_70bps_6mer_6.model -l 3000
+    python ampbalance.py -fasta J02459.fasta -ids lambda_amplicons.txt -w ampbalancetest -o ampbalanceoutput -d 5 -procs 4 -t template_r7.3_e6_70bps_6mer_6.model -c complement_r7.3_e6_70bps_6mer_6.model -l 3000
 
 This will output the following:
 
@@ -150,11 +150,11 @@ This script will process reads into subfolders in the targetpath corresponding t
 
 First navigate to the RUscripts folder in a windows command terminal:
 
-    > cd \path\to\RUscripts
+    cd \path\to\RUscripts
 
 To print the ampliconSPLIT.py help statement at the prompt ($) type:
 
-    > python ampliconSPLIT.py -h
+    python ampliconSPLIT.py -h
 
 which will output:
 
@@ -203,7 +203,7 @@ which will output:
 
 An example run command using test data:
 
-    > python ampliconSPLIT.py -fasta J02459.fasta -ids lambda_amplicons.txt -w RUtestset/ -o RUtestsetOUT -d 10 -procs 8 -t template_r7.3_e6_70bps_6mer_6.model
+    python ampliconSPLIT.py -fasta J02459.fasta -ids lambda_amplicons.txt -w RUtestset/ -o RUtestsetOUT -d 10 -procs 8 -t template_r7.3_e6_70bps_6mer_6.model
 
 Which will output:
 
@@ -263,11 +263,11 @@ A schematic of the workflow is provided below:
 
 First navigate to the ReadUntil folder within the RUscripts folder in a windows command terminal:
 
-    > cd \path\to\RUscripts\ReadUntil
+    cd \path\to\RUscripts\ReadUntil
 
 Help is available by typing:
 
-    > python test_gReadUntil.py -h
+    python test_gReadUntil.py -h
 
 which will output:
 
@@ -309,7 +309,7 @@ which will output:
 
 A typical command line to select reads mapping from 10-15kb in the lambda genome would be:
 
-    > python test_gReadUntil.py -fasta ../J02459.fasta -targets J02459:10000-15000 -procs 4  -m ../template_r7.3_e6_70bps_6mer_6.model -w ../RUtestset/ -o RUgOUT
+    python test_gReadUntil.py -fasta ../J02459.fasta -targets J02459:10000-15000 -procs 4  -m ../template_r7.3_e6_70bps_6mer_6.model -w ../RUtestset/ -o RUgOUT
 
 This would give the following output:
 
