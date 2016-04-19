@@ -173,10 +173,10 @@
 <p><img alt="An image illustrating the ampbalance Workflow" src="../images/ampbalance.jpg" /></p>
 <p>Here the script is implemented on reads that have been basecalled to facilitate testing and comparisons.</p>
 <p>First navigate to the RUscripts folder in a windows command terminal:</p>
-<pre><code>&gt; cd \path\to\RUscripts
+<pre><code>cd \path\to\RUscripts
 </code></pre>
 <p>To print the ampbalance.py help statement at the prompt ($) type:</p>
-<pre><code>&gt; python ampbalance.py -h
+<pre><code>python ampbalance.py -h
 </code></pre>
 <p>which will output:</p>
 <pre><code>usage: ampbalance.py [-h] -fasta FASTA -ids IDS -w WATCHDIR -o TARGETPATH -d
@@ -235,7 +235,7 @@ optional arguments:
 </code></pre>
 <p>This script is designed to match amplicon sequences of known and approximately uniform length to a reference sequence. The reference sequence should be a single sequence.</p>
 <p>We provide an example set of reads using lambda, found in the ampbalancetest folder. A typical usage command would be:</p>
-<pre><code>&gt; python ampbalance.py -fasta J02459.fasta -ids lambda_amplicons.txt -w ampbalancetest -o ampbalanceoutput -d 5 -procs 4 -t template_r7.3_e6_70bps_6mer_6.model -c complement_r7.3_e6_70bps_6mer_6.model -l 3000
+<pre><code>python ampbalance.py -fasta J02459.fasta -ids lambda_amplicons.txt -w ampbalancetest -o ampbalanceoutput -d 5 -procs 4 -t template_r7.3_e6_70bps_6mer_6.model -c complement_r7.3_e6_70bps_6mer_6.model -l 3000
 </code></pre>
 <p>This will output the following:</p>
 <pre><code>Reading amplicons
@@ -292,10 +292,10 @@ NH: No Hairpin - these reads are ignored as no hairpin has been found.</p>
 <p><img alt="An image illustrating the ampliconSPLIT Workflow" src="../images/ampliconSPLIT.jpg" /></p>
 <p>This script will process reads into subfolders in the targetpath corresponding to each amplicon described in the -ids file - e.g /targetpath/{amplicon_number}. If the read is basecalled, it will be placed in a downloads subfolder - e.g /targetpath/{amplicon_number}/downloads .</p>
 <p>First navigate to the RUscripts folder in a windows command terminal:</p>
-<pre><code>&gt; cd \path\to\RUscripts
+<pre><code>cd \path\to\RUscripts
 </code></pre>
 <p>To print the ampliconSPLIT.py help statement at the prompt ($) type:</p>
-<pre><code>&gt; python ampliconSPLIT.py -h
+<pre><code>python ampliconSPLIT.py -h
 </code></pre>
 <p>which will output:</p>
 <pre><code>usage: ampliconSPLIT.py [-h] -fasta FASTA -ids IDS -w WATCHDIR -o TARGETPATH
@@ -342,7 +342,7 @@ optional arguments:
 -ver, --version       show program's version number and exit
 </code></pre>
 <p>An example run command using test data:</p>
-<pre><code>&gt; python ampliconSPLIT.py -fasta J02459.fasta -ids lambda_amplicons.txt -w RUtestset/ -o RUtestsetOUT -d 10 -procs 8 -t template_r7.3_e6_70bps_6mer_6.model
+<pre><code>python ampliconSPLIT.py -fasta J02459.fasta -ids lambda_amplicons.txt -w RUtestset/ -o RUtestsetOUT -d 10 -procs 8 -t template_r7.3_e6_70bps_6mer_6.model
 </code></pre>
 <p>Which will output:</p>
 <pre><code>processing the reference fasta.
@@ -393,10 +393,10 @@ Amplicon Number 11
 <p>A schematic of the workflow is provided below:</p>
 <p><img alt="An image illustrating the test_gReadUntil Workflow" src="../images/test_gReadUntil.jpg" /></p>
 <p>First navigate to the ReadUntil folder within the RUscripts folder in a windows command terminal:</p>
-<pre><code>&gt; cd \path\to\RUscripts\ReadUntil
+<pre><code>cd \path\to\RUscripts\ReadUntil
 </code></pre>
 <p>Help is available by typing:</p>
-<pre><code>&gt; python test_gReadUntil.py -h
+<pre><code>python test_gReadUntil.py -h
 </code></pre>
 <p>which will output:</p>
 <pre><code>usage: test_gReadUntil.py [-h] -fasta FASTA -targets [TARGETS [TARGETS ...]]
@@ -436,7 +436,7 @@ optional arguments:
 -ver, --version       show program's version number and exit
 </code></pre>
 <p>A typical command line to select reads mapping from 10-15kb in the lambda genome would be:</p>
-<pre><code>&gt; python test_gReadUntil.py -fasta ../J02459.fasta -targets J02459:10000-15000 -procs 4  -m ../template_r7.3_e6_70bps_6mer_6.model -w ../RUtestset/ -o RUgOUT
+<pre><code>python test_gReadUntil.py -fasta ../J02459.fasta -targets J02459:10000-15000 -procs 4  -m ../template_r7.3_e6_70bps_6mer_6.model -w ../RUtestset/ -o RUgOUT
 </code></pre>
 <p>This would give the following output:</p>
 <pre><code>***********************************************************************************************

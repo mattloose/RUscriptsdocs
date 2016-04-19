@@ -162,11 +162,11 @@
 </code></pre>
 <p>which is available after installing minKNOW.</p>
 <p>First navigate to this folder:</p>
-<pre><code>&gt; cd \grouper\binaries
+<pre><code>cd \grouper\binaries
 </code></pre>
 <p>ws_event_sampler can run either stand alone in simulation mode, or alongside minKNOW as it is running. For simulations, we suggest you start minKNOW and have it open (but not actually sequencing). Then start ws_event_sampler in simulation mode. In this way you will see the output from our scripts in the minKNOW messages window.</p>
 <p>Running ws_event_sampler is done as follows:</p>
-<pre><code>&gt; bin\ws_event_sampler.exe
+<pre><code>bin\ws_event_sampler.exe
 </code></pre>
 <p>*** NOTE: The command itself is bin\ws_event_sampler.exe so the command is executed from the folder binaries, not from within the folder bin. Executing the file from within the bin folder will result in the program crashing with a message about being unable to open a config file.</p>
 <p>*** NOTE: ws_event_sampler provides no visible indication that it is running other than blocking the command line. If it fails, it will terminate - sometimes with an error message, but often not. Support for ws_event_sampler is available direct from ONT. We hope we have provided sufficient guidance for its use in the context of our scripts here.</p>
@@ -176,7 +176,7 @@
 <p>1) Open a command window as administrator - to do this, right click on the cmd icon and select "Run as Administrator"</p>
 <p>2) In this window navigate to C:\grouper\binaries</p>
 <p>3) To see help for ws_event_sampler type:</p>
-<pre><code>&gt; bin\ws_event_sampler.exe -h
+<pre><code>bin\ws_event_sampler.exe -h
 </code></pre>
 <p>which will output:</p>
 <pre><code>Usage: ws_event_sampler [Options]
@@ -218,11 +218,11 @@ Specific options:
                                         already exists.
 </code></pre>
 <p>To set up a simulation on a specific port type:</p>
-<pre><code>&gt; bin\ws_event_sampler.exe -p 9200 -s --sim-channels 100 --sim-fasta C:\path\to\RUscripts\J02459.fasta --sim-log log.txt
+<pre><code>bin\ws_event_sampler.exe -p 9200 -s --sim-channels 100 --sim-fasta C:\path\to\RUscripts\J02459.fasta --sim-log log.txt
 </code></pre>
 <p>This will establish the data stream on port 9200, simulating 100 channels with a read distribution as described derived from the lambda sequence we have provided here. ws_event_sampler in simulation mode will write out a log file to log.txt enabling tracking of events.</p>
 <p>First navigate to the correct folder:</p>
-<pre><code>&gt; cd \path\to\RUscripts\ReadUntil
+<pre><code>cd \path\to\RUscripts\ReadUntil
 </code></pre>
 <p>In the example.py script, edit the line which states:</p>
 <pre><code>host="ws://localhost:&lt;port&gt;"
@@ -233,7 +233,7 @@ Specific options:
 <p>Note - you can specify a different port value if you wish.</p>
 <p>Then from another command window execute the examply.py script (note this is supplied by the ONT API).</p>
 <p>Then run the example script:</p>
-<pre><code>&gt; python example.py
+<pre><code>python example.py
 </code></pre>
 <p>This should output something like (depending on the version of the API in use):</p>
 <pre><code>Client connection started. Beginning unblock loop...
