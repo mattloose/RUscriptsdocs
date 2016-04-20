@@ -285,7 +285,7 @@ HF: Hairpin Found - this is the number of reads containing a hairpin - these are
 NH: No Hairpin - these reads are ignored as no hairpin has been found.</p>
 <p>This program will output files to the specified output directory. Files which are already basecalled will be written to a subfolder called "Downloads". Raw files will just be written to the specified output directory.</p>
 <p>Note that the example read set here has been preselected to contain 10 reads mapping to each amplicon and all the reads are 2D - thus the HF value is 110 and the DO value is 0.</p>
-<p>It is also important to note that this script uses the hairpin_found flag in the read files. Since minKNOW version 0.51.1.62 (released February 22nd 2016) the writing of this flag to read files has been problematic. Thus reads generated with this version of minKNOW may appear to have far fewer 2D reads than they really do.</p>
+<p>It is also important to note that this script uses the hairpin_found flag in the read files. Since minKNOW version 0.51.1.51 (released February 22nd 2016) the writing of this flag to read files has been problematic. Thus reads generated with this version of minKNOW may appear to have far fewer 2D reads than they really do.</p>
 <h1 id="ampliconsplitpy">ampliconSPLIT.py</h1>
 <p>ampliconSPLIT.py simulates read until on either raw or basecalled reads. It ignores the first 50 events of a read and matches the subsequent 250 events against a reference squiggle. Read until only ever processes template data and so only a template model is required.</p>
 <p>The ampliconSPLIT workflow is illustrated below. Note that unlike ampbalance, ampliconSPLIT will separate read files into a directory per amplicon.</p>
