@@ -135,7 +135,7 @@ This program will output files to the specified output directory. Files which ar
 
 Note that the example read set here has been preselected to contain 10 reads mapping to each amplicon and all the reads are 2D - thus the HF value is 110 and the DO value is 0.
 
-It is also important to note that this script uses the hairpin_found flag in the read files. Since minKNOW version 0.51.1.62 (released February 22nd 2016) the writing of this flag to read files has been problematic. Thus reads generated with this version of minKNOW may appear to have far fewer 2D reads than they really do.
+It is also important to note that this script uses the hairpin_found flag in the read files. Since minKNOW version 0.51.1.51 (released February 22nd 2016) the writing of this flag to read files has been problematic. Thus reads generated with this version of minKNOW may appear to have far fewer 2D reads than they really do.
 
 
 # ampliconSPLIT.py
@@ -271,9 +271,15 @@ Help is available by typing:
 
 which will output:
 
+    ***********************************************************************************************
+    **** This code will open a collection of reads and simulate read until on them. It will    ****
+    **** copy reads into a secondary folder for subsequent processing by another analysis      ****
+    **** package.                                                                              ****
+    ***********************************************************************************************
     usage: test_gReadUntil.py [-h] -fasta FASTA -targets [TARGETS [TARGETS ...]]
                           -procs PROCS -m TEMP_MODEL [-log LOGFILE] -w
-                          WATCHDIR [-o OUTPUT_FOLDER] [-v] [-ver]
+                          WATCHDIR [-length LENGTH] [-o OUTPUT_FOLDER] [-v]
+                          [-ver]
 
     real_read_until: A program providing read until with the Oxford Nanopore
     minION device. This program will ultimately be driven by minoTour to enable
@@ -301,6 +307,11 @@ which will output:
                         The path to the folder containing the downloads
                         directory with fast5 reads to analyse - e.g.
                         C:\data\minion\downloads (for windows).
+    -length LENGTH, --library-length LENGTH
+                        Provide the average expected length of your library.
+                        This offset will be applied to reads that are likely
+                        to extend into your region of interest on either
+                        strand.
     -o OUTPUT_FOLDER, --output OUTPUT_FOLDER
                         Path to a folder to symbolically place reads
                         representing match and not match.
@@ -309,7 +320,7 @@ which will output:
 
 A typical command line to select reads mapping from 10-15kb in the lambda genome would be:
 
-    python test_gReadUntil.py -fasta ../J02459.fasta -targets J02459:10000-15000 -procs 4  -m ../template_r7.3_e6_70bps_6mer_6.model -w ../RUtestset/ -o RUgOUT
+    python test_gReadUntil.py -fasta ../J02459.fasta -targets J02459:10000-15000 -procs 4  -m ../template_r7.3_e6_70bps_6mer_6.model -w ../RUtestset/ -o RUgOUT -length 3000
 
 This would give the following output:
 
@@ -318,25 +329,31 @@ This would give the following output:
     **** copy reads into a secondary folder for subsequent processing by another analysis      ****
     **** package.                                                                              ****
     ***********************************************************************************************
+
+    Checking Files...
+
+    All OK.
+
+    J02459
     processing the reference fasta.
-    J02459:10000-15000
     ID J02459
     length 48502
-    1 J02459:10000-15000 10000 15000 J02459
-    We want to extract this chunk J02459_1
-    ID J02459_1
-    length 5000
     FORWARD STRAND
     REVERSE STRAND
+    J02459 R 19692
     ../RUtestset/llssbzms2p35x_20151004_readuntiludududududu_RU21_lambdaPCR_2922_1_ch10_file49_strand.fast5 No Match
-    ../RUtestset/llssbzms2p35x_20151004_readuntiludududududu_RU21_lambdaPCR_2922_1_ch10_file69_strand.fast5 Sequence Found
+    J02459 F 4084
+    ../RUtestset/llssbzms2p35x_20151004_readuntiludududududu_RU21_lambdaPCR_2922_1_ch10_file69_strand.fast5 No Match
     .
     .
     .
+    J02459 R 11844
     ../RUtestset/llssbzms2p35x_20151004_readuntiludududududu_RU21_lambdaPCR_2922_1_ch8_file58_strand.fast5 Sequence Found
-    ../RUtestset/llssbzms2p35x_20151004_readuntiludududududu_RU21_lambdaPCR_2922_1_ch9_file100_strand.fast5 No Match
+    J02459 R 21791
     ../RUtestset/llssbzms2p35x_20151004_readuntiludududududu_RU21_lambdaPCR_2922_1_ch8_file11_strand.fast5 No Match
+    J02459 F 9998
+    ../RUtestset/llssbzms2p35x_20151004_readuntiludududududu_RU21_lambdaPCR_2922_1_ch9_file100_strand.fast5 Sequence Found
 
-Sequence found indicates that the read is derived from the desired region. No Match indicates that the read is from another region.
+Sequence found indicates that the read is derived from the desired region. No Match indicates that the read is from another region. The line "J02459 F 9998" indicates the read was matched to sequence ID J02459 on the forward strand at position 9998.   
 
 This script will output reads to the output folder in two separate directories, named "reject" and "sequence". Files which would have been rejected will be placed in subfolders within the "reject" folder and those sequenced within the "sequence" folder.
