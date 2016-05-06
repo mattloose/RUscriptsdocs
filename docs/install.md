@@ -37,6 +37,12 @@ To exit this window type
 
     >>> exit()
 
+If the default version of python in your path is NOT anaconda you can launch it by prefacing the python command with:
+
+    C:\Anaconda\python
+
+So - at the command prompt ">" you type the full path to Anaconda python.
+
 Please note these scripts depend upon APIs which are not provided here. The Read Until API is available from Oxford Nanopore on request to MAP participants.
 
 #Installing components for Read Until Scripts
