@@ -80,7 +80,7 @@ mlpy-3.5.0-cp27-none-win_amd64.whl
 
 To install this you need to first install pip.
 
-     easy_install install pip
+     easy_install pip
 
 Then to install your downloaded wheel:
 
