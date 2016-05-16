@@ -6,6 +6,10 @@ The associated GitHub repository is [here](https://github.com/mattloose/RUscript
 
 Read Until is a technology enabled by the [Oxford Nanopore Technologies](http://nanoporetech.com "Oxford Nanopore Technologies Homepage") MinION and expected to be available in the future PromethION sequencers. The scripts described here provide one method of implementation of read until. The scripts are supplied as is and are used at your own risk.
 
+#*MinKNOW 0.51.3 - 16th May 2016*#
+
+We are aware of the imminent release of a new version of MinKNOW (cross platform). This version of MinKNOW contains a number of changes in the way Read Until is implemented. We are still testing this platform and will need to provide fresh instructions for configuring our scripts and test routines. We hope to update these in the next week.
+
 #*WARNING:*
 
 The read until API changes depending on the version of minKNOW in use. The read until API for minKNOW versions 0.48.1.3 - 0.51.1.51 is available on request from Oxford Nanopore.  
