@@ -8,7 +8,7 @@ Read Until is a technology enabled by the [Oxford Nanopore Technologies](http://
 
 #*MinKNOW 0.51.3 - 16th May 2016*#
 
-We are aware of the imminent release of a new version of MinKNOW (cross platform). This version of MinKNOW contains a number of changes in the way Read Until is implemented. We are still testing this platform and will need to provide fresh instructions for configuring our scripts and test routines. We hope to update these in the next week.
+We are aware of the imminent release of a new version of MinKNOW (cross platform). This version of MinKNOW contains a number of changes in the way Read Until is implemented, but importantly it does now work. We are still testing this platform and will need to provide fresh instructions for configuring our scripts and test routines to work with this version. 
 
 #*WARNING:*
 
