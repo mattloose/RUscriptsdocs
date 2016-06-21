@@ -196,6 +196,7 @@
 <pre><code>bin\ws_event_sampler.exe -p 9200 -s --sim-channels 100 --sim-fragment-length 5 250 500 --sim-fasta C:\path\to\RUscripts\J02459.fasta --sim-log log.txt
 </code></pre>
 <p>You can obviously edit the number of channels and fragment lengths as you wish.</p>
+<p>** Note that new features are added to ws_event_sampler.exe - running bin\ws_event_sampler.exe -h will expose more of these options. The most recent update includes the ability to increase the speed of the simulation.</p>
 <p>In a separate command window, you can see the gReadUntil.py help statement:</p>
 <p>First browse to the correct folder:</p>
 <pre><code>cd \path\to\RUscripts\ReadUntil
@@ -336,21 +337,22 @@ Client connection started. Beginning unblock loop...
 <p>Running read until will influence the behaviour of your flow cell and change the output of your sequencing experiment. You are strongly advised to run simulations of read until prior to running on a live flow cell. The code as presented here is a demonstration of read until and one implementation. Users run this code entirely at their own risk.</p>
 <p>Below is an image illustrating the work flow of gReadUntil on a live run. Note that the data flow is now from the live running minKNOW to ws_event_sampler:</p>
 <p><img alt="An image showing the live gReadUntil ONT workflow" src="../images/livegReadUntil.jpg" /></p>
-<p>To run on live data, first change the configuration of ws_event_sampler:</p>
-<p>(make sure you are in the correct folder):</p>
-<pre><code>cd \grouper\binaries
-</code></pre>
-<p>Then:</p>
-<pre><code>bin\ws_event_sampler.exe -p 9200
-</code></pre>
-<p>This will now stream live data from whatever is being sequenced in minKNOW on port 9200</p>
+<p>** Since the release of minKNOW version 0.51.3 and greater it is no longer necessary to manually launch ws_event_sampler when running live. Rather this service starts automatically. In the currently released minKNOW (as of 21 June 2016) this service does not restart if it crashes. We therefore suggest that users wait for this bug to be resolved in the next version of minKNOW before trying any real experiments. However simulations are unaffected by this issue.</p>
+<p>** We leave the comments below (marked with an '!') for information but users should note that when ws_even_sampler is started automatically it runs on port 8001. You should also only start read until AFTER THE MUX SCAN IS COMPLETE.</p>
+<p>! To run on live data, first change the configuration of ws_event_sampler:</p>
+<p>! (make sure you are in the correct folder):</p>
+<p>!    cd \grouper\binaries</p>
+<p>! Then:</p>
+<p>!    bin\ws_event_sampler.exe -p 9200</p>
+<p>! This will now stream live data from whatever is being sequenced in minKNOW on port 9200</p>
 <p>To run gReadUntil you MUST switch the model file to one appropriate for your chemistry and pore type. <em>If you use the wrong model file you will get incorrect matching. We suggest re running the getmodels.py script on a base called read from your most recent run to check the model has not changed.</em></p>
-<p>In a seperate command window navigate to:</p>
+<p>In a separate command window navigate to:</p>
 <pre><code>cd \path\to\RUscripts\ReadUntil\
 </code></pre>
-<p>The run:</p>
+<p>Then run:</p>
 <pre><code>python gReadUntil.py -f ..\J02459.fasta -targets J02459:10000-20000 J02459:30000-45000 -procs 8 -t 100 -m ..\template_r7.3_e6_70bps_6mer_6.model -ip localhost -p 9200 -length 1000
 </code></pre>
+<p>** Important: If you are using minKNOW 0.51.3 or greater then the port (-p) option should be set to 8001. You should also only start read until AFTER THE MUX SCAN IS COMPLETE.</p>
 <p>Note: gReadUntil.py will write a message to the minKNOW messages window to tell you that we are remotely interacting with it.</p>
 <p>Note: You should set the -length parameter to the expected average length of your library.</p>
 <p>Note: As long as the appropriate ports are not blocked by your firewalls there is no reason why this code cannot be run on a separate computer - just configure the -ip statement accordingly.</p>
@@ -846,13 +848,13 @@ Killed: 9
 <p>Running read until will influence the behaviour of your flow cell and change the output of your sequencing experiment. You are strongly advised to run simulations of read until prior to running on a live flow cell. The code as presented here is a demonstration of read until and one implementation. Users run this code entirely at their own risk.</p>
 <p>We illustrate the workflow of amplicon balancing on real data. Now the script monitors reads being written to disk by minKNOW and moves those scripts to a second folder for subsequent analysis by Metrichor. As before blue lines indicate the flow of event/read data, red lines the rejection control messages and dashed black lines the flow of control information to minKNOW.</p>
 <p><img alt="An image showing the live amplicon balancing workflow" src="../images/liveaReadUntil.jpg" /></p>
-<p>In an separate administrator window navigate to:</p>
-<pre><code>cd \grouper\binaries
-</code></pre>
-<p>To run amplicon balancing on live data, first change the configuration of ws_event_sampler:</p>
-<pre><code>bin\ws_event_sampler.exe -p 9200
-</code></pre>
-<p>This will now stream live data from whatever is being sequenced in minKNOW on port 9200.</p>
+<p>** Since the release of minKNOW version 0.51.3 and greater it is no longer necessary to manually launch ws_event_sampler when running live. Rather this service starts automatically. In the currently released minKNOW (as of 21 June 2016) this service does not restart if it crashes. We therefore suggest that users wait for this bug to be resolved in the next version of minKNOW before trying any real experiments. However simulations are unaffected by this issue.</p>
+<p>** We leave the comments below (marked with '!') for information but users should note that when ws_even_sampler is started automatically it runs on port 8001. You should also only start read until AFTER THE MUX SCAN IS COMPLETE.</p>
+<p>! In an separate administrator window navigate to:</p>
+<p>!    cd \grouper\binaries</p>
+<p>! To run amplicon balancing on live data, first change the configuration of ws_event_sampler:</p>
+<p>!    bin\ws_event_sampler.exe -p 9200</p>
+<p>! This will now stream live data from whatever is being sequenced in minKNOW on port 9200.</p>
 <p>For the aReadUntil.py script it is essential that you:</p>
 <ol>
 <li>Use the correct model file for your chemistry.</li>
